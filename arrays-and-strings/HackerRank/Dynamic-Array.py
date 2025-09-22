@@ -42,6 +42,10 @@ def dynamicArray(n, queries):
 n = 2
 queries = [[1,0,5],[1,1,7],[1,0,3],[2,1,0],[2,1,1]]
 
-a =dynamicArray(n, queries)
+a = dynamicArray(n, queries)
 
 print(a)
+
+# T and S complexity
+# T: O(q), where q is number of queries
+# S: O(n + q1), where n is initial length and q1 is number of type1 queries 

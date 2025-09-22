@@ -42,3 +42,7 @@ ar = [[1, 1, 1, 0, 0, 0], [0, 1, 0, 0, 0, 0], [1, 1, 1, 0, 0, 0], [0, 0, 2, 4, 4
 a = hourglassSum(ar)
 
 print(a)
+
+# T and S complexity
+# T: O(n^2) , two for loop
+# S: O(1) , use only few variable
