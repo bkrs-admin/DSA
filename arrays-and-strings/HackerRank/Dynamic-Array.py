@@ -18,7 +18,7 @@ def dynamicArray(n, queries):
         #case 1, if query 1, x, y
         if q == 1:
             #compute idx = (x ^ lastAnswer) % 2
-            idx = (x ^ lastAnswer) % 2
+            idx = (x ^ lastAnswer) % n
             
             #append the integer y to arr[idx]
             arr[idx].append(y)
@@ -26,7 +26,7 @@ def dynamicArray(n, queries):
         # else case,
         else:
             #compute idx = (x ^ lastAnswer) % 2
-            index = (x ^ lastAnswer) % 2
+            index = (x ^ lastAnswer) % n
             
             #set lastAnswer = arr[idx][y%len(arr[idx])]
             # due to get y%len(arr[idx]), handle in seperate line/variable
