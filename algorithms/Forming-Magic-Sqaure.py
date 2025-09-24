@@ -24,6 +24,6 @@ def formingMagicSquare(s):
         
     return min_cost
 
-# because input size is already set to 9.
+# because input size is already set to size of 9 elements.
 # T: O(1)
 # S: O(1)
