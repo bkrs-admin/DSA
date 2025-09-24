@@ -49,3 +49,19 @@ s = ["eat","tea","tan","ate","nat","bat"]
 a = groupAnagrams(s)
 
 print(a)
+
+
+# Another solution using only hash map without defaultdict
+def groupAnagrams(strs):
+    h_map = {}
+
+    for s in strs:
+        sig = "".join(sorted(s))
+
+        if sig not in h_map:
+            h_map[sig] = []
+        
+        h_map[sig].append(s)
+            
+
+    return list(h_map.values())
