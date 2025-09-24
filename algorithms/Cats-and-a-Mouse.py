@@ -8,3 +8,6 @@ def catAndMouse(x, y, z):
         return "Cat B"
     else:
         return "Mouse C"
+
+# T: O(1)
+# S: O(1)
