@@ -1,4 +1,3 @@
-
 def sortedSquares(nums):
     n = len(nums)
     left = 0
