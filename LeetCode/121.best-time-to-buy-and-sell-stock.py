@@ -11,3 +11,5 @@ def maxProfit(prices):
 
     return max_profit
 
+# T: O(n)
+# S: O(1)
