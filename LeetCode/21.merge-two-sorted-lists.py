@@ -20,3 +20,6 @@ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) ->
     curr.next = list1 if list1 else list2
 
     return d.next
+
+# T: O(n)
+# S: O(1)
