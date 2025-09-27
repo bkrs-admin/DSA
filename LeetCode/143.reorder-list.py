@@ -8,7 +8,7 @@ def reorderList(self, head: Optional[ListNode]) -> None:
     
     # second, reverse second half
     second = slow.next
-    prev = slow.next = None
+    prev = slow.next = None # make sure disconnect slow.next from divided half
     while second:
         tmp = second.next
         second.next = prev
