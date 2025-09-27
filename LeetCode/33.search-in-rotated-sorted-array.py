@@ -18,3 +18,6 @@ def search(nums, target):
                 right = mid - 1 # else move right pointer to mid - 1
         
     return -1 # return -1 if target not found in nums
+
+# T: O(log n)
+# s: O(1)
