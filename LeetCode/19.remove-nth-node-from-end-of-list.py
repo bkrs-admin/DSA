@@ -19,5 +19,8 @@ class Solution:
         behind.next = behind.next.next # remove it to point to .next.next
 
         return dummy.next # return dummy.next which pointing head (or head.next)
+    
+# T: O(n)
+# S: O(1)
 
         
