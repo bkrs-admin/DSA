@@ -40,3 +40,9 @@ def searchMatrix(matrix, target):
 
 # T: O(log(m * n))
 # S: O(1)
+
+"""
+결론적으로, M*N 행렬을 1차원 인덱스 k로 접근할 때, 실제 2차원 좌표는 다음과 같습니다.
+
+matrix[r][c]=matrix[k//N][k%N]
+"""
