@@ -1,0 +1,23 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        # helper function for dfs searching
+        def dfs(left, right): 
+            if not left and not right:  # if not left and not right which symmectric, return True
+                return True
+            if not left or not right: # if either one of them is missing, return False
+                return False
+            
+            # return only true if these conditions met
+            return ((left.val == right.val) and 
+                    dfs(left.left, right.right) and
+                    dfs(left.right, right.left))
+
+        return dfs(root.left, root.right) # return dfs return boolean value
+# T: O(n)
+# S: O(w), worst case O(n)

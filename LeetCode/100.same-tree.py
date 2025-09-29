@@ -26,3 +26,6 @@ class Solution:
             queue.append((p_node.right, q_node.right))
         
         return True # return True if passed all
+
+# T: O(n)
+# S: O(w), worst case O(n)
