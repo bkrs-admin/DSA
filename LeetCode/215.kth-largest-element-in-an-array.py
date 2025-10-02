@@ -14,4 +14,6 @@ class Solution:
             heapq.heappop(max_heap)
 
         return -max_heap[0] # return the 0 index which our kth largest element with non negetive value
-            
+
+# T: O(k)
+# S: O(1)

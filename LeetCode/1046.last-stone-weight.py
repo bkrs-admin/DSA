@@ -31,3 +31,6 @@ class Solution:
 
         # return non negetive number for fianl result if element exists in max_heap else return 0
         return -max_heap[0] if max_heap else 0 
+    
+# T: O(n)
+# S: O(1)
