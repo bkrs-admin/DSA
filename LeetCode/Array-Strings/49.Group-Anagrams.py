@@ -1,67 +1,41 @@
 from collections import defaultdict
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        # it's simple and difficult at the same time 
+        # so we have to check which are pair of anagram
+        # in order to do that, we need a key to group anagram str in strs as values
 
-def groupAnagrams(strs):
-    # two way to solve this question
-    # first - counting array, great for longer text, for alphanumeric, 
-    # second - sorting , great for shorter text, for letter varierty than alphanumeric 
+        # so there is a couple way to create a key, will use defaultdict for this now
+        # using default dict, will be T:(n * k log k) 
 
-    # first solution - counting arr, contraints = lowercase english letters
-    # T: O(N'M), S O(N'K), M = length of word, K = unique count(which 26)
-    
-    # reset defaultdict to list type so when access to key, if not exists, then it creates empty list automatically
-    # res = defaultdict(list)
+        # first, create a defaultdict with list, make sure import defaultdict 
+        # d_dict = defaultdict(list)
 
-    # # iterate each value in strs
-    # for s in strs:
-    #     #create an array with size of 26 which lowercase letter counts
-    #     count = [0] * 26
-
-    #     for c in s: # iterate each letter again
-    #         count[ord(c) - ord('a')] += 1 # calculate each letter is how far from 'a' and increase count + store to count
-        
-    #     #once each letter count is cleared, then append s in count index
-    #     # since array is not hashable, so change it to tuple 
-    #     res[tuple(count)].append(s)
-
-    # # return final values (which is word) in list(array) format
-    # return list(res.values())
-
-    # Second solution - Sorting
-    # T: O(N'M log M) , S: O(N'M)
-
-    # reset defaultdict to list type so when access to key, if not exists, then it creates empty list automatically
-    res = defaultdict(list)
-
-    for s in strs: # iterate each values from given strs
-        sig = "".join(sorted(s)) # create signature using sorted function
-
-        # if not using defaultdict, then have to create empty array first
-        # if sig not in res:
-            # res[sig] = []
-
-        res[sig].append(s) # then in signature key, append s value 
-    
-    # # return final values (which is word) in list(array) format
-    return list(res.values())
-
-s = ["eat","tea","tan","ate","nat","bat"]
-
-a = groupAnagrams(s)
-
-print(a)
-
-
-# Another solution using only hash map without defaultdict
-def groupAnagrams(strs):
-    h_map = {}
-
-    for s in strs:
-        sig = "".join(sorted(s))
-
-        if sig not in h_map:
-            h_map[sig] = []
-        
-        h_map[sig].append(s)
+        # # second, now we need to iterate str from strs
+        # for s in strs: 
+        #     # third, we are going to create key, make sure sort s in order to get a unique key
+        #     key = "".join(sorted(s)) => tuple(sotred(s)) also works!
             
+        #     # forth, then now append s to key's array 
+        #     d_dict[key].append(s)
 
-    return list(h_map.values())
+        # return list(d_dict.values())
+
+        # actually we can optimize that to T: O(n * k), k = length of strings(s)
+        
+        # same for defaultdict, it's much easier and simple 
+        d_dict = defaultdict(list)
+
+        # also same method to iterate str in strs
+        for s in strs:
+
+            #instead of using sorted, we can create some special key cause there's only 26 characters in english 
+            count = [0] * 26 # set an array with 26 0
+            for c in s: # iterate char in s, and get a distance as a key and increased it 
+                count[ord(c) - ord('a')] += 1
+
+            # same method, in our count key position, append s            
+            d_dict[tuple(count)].append(s)
+
+        # same method, return list type of d_dict values
+        return list(d_dict.values())
