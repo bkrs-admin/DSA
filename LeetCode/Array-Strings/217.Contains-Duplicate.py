@@ -1,29 +1,27 @@
-def containsDuplicate(nums):
-        # in order to check duplicate elements from array, hash set/map is great. 
-        # what I need is only check if there is duplicate rather than its frequency,
-        # so I would choose hash set instead of hashmap.
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        # two way to solve this problem 
+        # 1. simple, compare length of nums and set(nums), return True if not the same, else false, T: O(n), S:O(n)
+        # 2. A bit longer, but possible situation for early return which could be fater in some case, T: O(1), worst O(n), S: O(n)
 
-        # create a variable uisng set
+
+        # first way - simple comparison 
+        # return len(set(nums)) != len(nums)
+
+        # second way - early return
+        
+        # create a hashset
         sett = set()
-        
-        # iterate elements from array nums
+
+        # using for loop , iteration num in nums
         for num in nums:
-            # if element not in set, 
-            if num not in sett:
-                sett.add(num) # add element to set
-            else:
-                return True # else, found duplicate return True 
-        
-        return False #return false which it has no duplicate in nums
-        # or simplyfied, Return len(set(nums)) != len(nums)
+            # if num in sett, return True
+            if num in sett:
+                return True
+            
+            # if num not in sett, add num to sett
+            sett.add(num)
 
-arr = [1,2,3,1]
-
-a = containsDuplicate(arr)
-print(a)
-
-# T - O(n)
-# S - O(s)
-
-
-
+        #if loop is over then no duplicate found, return False
+        return False
+            
