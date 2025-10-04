@@ -1,4 +1,3 @@
-from collections import deque
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -7,37 +6,42 @@ from collections import deque
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        if not root:
-            return []
+        # Level order traversal = BFS Breadth First Search
 
-         #needs to append root to q
+        # so Queue will be helpful, add root to queue, then iterate while q, make sure nested in order to save level by level
+        # if not, it will save each individual node by node instead of grouping by level
+        
+        # base/edge case:
+        if not root: return []
+
+        # get queue and append root to queue
         q = deque([root])
+        # get an empty array to save each level
+        res = []
 
-        #and needs a variable to store result []
-        result = []
-
+        # loop through while q is not empty
         while q:
-            #store each level's value to list
+            # temporary array to store each level
             level = []
 
-            #for range of len(q)
+            # key part. loop over again as long as each level length in q
             for _ in range(len(q)):
-                #pop the first element from q using popleft
+                # then popleft the node from queue
                 node = q.popleft()
 
-                #append node val to level
+                # now, save node.val to level
                 level.append(node.val)
 
-                #if node.left, then append it back to q also right as well
+                # if node has left and right, then add it back to queue for next traversal
                 if node.left:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
-            
-            #after all level is completed, append level list to result
-            result.append(level)
 
-        return result
+            #once for loop is over which mean a level is searched, then add each level to res for our return
+            res.append(level)
+            
+        return res
 
 # T: O(n)
-# S: O(w)
+# T: O(n)
