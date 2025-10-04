@@ -6,15 +6,21 @@
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if not root: # edge case handling
-            return root
+        # so we need to invert binary tree
+        # which mean node's left to right and right to left
+
+        # base/edge case 
+        if not root: return root
+
+        # now process the inverting binary tree
+        root.left, root.right = root.right, root.left
         
-        root.left, root.right = root.right, root.left # intert tree
+        # will do the left and right node as well
+        self.invertTree(root.left)
+        self.invertTree(root.right)
 
-        self.invertTree(root.left) # recursively call for tree's left
-        self.invertTree(root.right) # recursively call for tree's right
+        #finally return root
+        return root 
 
-        return root #return inverted root tree
-    
 # T: O(n)
-# S: O(h) - height of tree
+# S: O(h)
