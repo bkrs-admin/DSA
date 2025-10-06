@@ -31,3 +31,4 @@ print(a)
 # T: O(n), S:O(s) 
 # T - One for loop for time complexity, store key:value to hashmap is constant time 
 # S - and worst case scenario is store length of array to hashmap which is O(n) space
+"I use a hash map to store numbers and their indices. For each number, I check if the complement exists. This solution is O(n) in time and O(n) in space, which is optimal for the Two Sum problem."
