@@ -1,5 +1,6 @@
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+        if sum(nums) < target: return 0
         # min length of subarray whose sum is greater than or equal to target
 
         # we need a variable for min length, set it as inf value to whichever comes, it updates
@@ -31,4 +32,10 @@ class Solution:
                 left += 1
         
         # return min_length if updated, else return 0
-        return min_length if min_length != float('inf') else 0
+        return min_length
+# T: O(n)
+# S: O(1), worst case O(n)
+
+"I use a sliding window with two pointers. "
+"The right pointer expands the window, and once the sum reaches or exceeds the target, "
+"I shrink the window from the left to minimize length. Time complexity is O(n) and space is O(1)."
