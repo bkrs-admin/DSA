@@ -1,3 +1,5 @@
+from collections import deque
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -6,42 +8,32 @@
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        # Level order traversal = BFS Breadth First Search
-
-        # so Queue will be helpful, add root to queue, then iterate while q, make sure nested in order to save level by level
-        # if not, it will save each individual node by node instead of grouping by level
+        if not root: 
+            return []
         
-        # base/edge case:
-        if not root: return []
-
-        # get queue and append root to queue
         q = deque([root])
-        # get an empty array to save each level
-        res = []
+        
+        ans = []
 
-        # loop through while q is not empty
-        while q:
-            # temporary array to store each level
+        while q: 
             level = []
-
-            # key part. loop over again as long as each level length in q
+            
             for _ in range(len(q)):
-                # then popleft the node from queue
                 node = q.popleft()
 
-                # now, save node.val to level
                 level.append(node.val)
 
-                # if node has left and right, then add it back to queue for next traversal
                 if node.left:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
+            ans.append(level)
 
-            #once for loop is over which mean a level is searched, then add each level to res for our return
-            res.append(level)
-            
-        return res
+        return ans 
 
-# T: O(n)
-# T: O(n)
+# O(n)
+# O(n)
+
+# “I implemented a level order traversal using BFS with a queue.
+# Each node is processed once, so the time complexity is O(n).
+# The space complexity is O(n), since in the worst case the queue holds all nodes in the last level.”
