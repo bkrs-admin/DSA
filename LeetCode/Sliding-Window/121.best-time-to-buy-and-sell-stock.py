@@ -12,7 +12,7 @@ class Solution:
         # dive into code
         
         # min_price set as inf value so whichever comes first, it will store here
-        min_price = float('inf')
+        min_price = prices[0]
         # max_profit for 0 to track of maximum profit
         max_profit = 0
         # curr_profit for 0 to compare with max_profit each time when iterate
@@ -31,3 +31,6 @@ class Solution:
 
 # T: O(n)
 # S: O(1)
+"I iterate through the prices while keeping track of the minimum price seen so far. "
+"For each price, I calculate the potential profit and update the maximum profit. "
+"This gives O(n) time and O(1) space."
