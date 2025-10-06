@@ -34,3 +34,7 @@ class Solution:
 
 # T: O(n)
 # S: O(1)
+# “I use two pointers at both ends of the array. 
+# At each step, I calculate the area using the shorter height and update the maximum. 
+# Then I move the pointer of the shorter line inward, because only a taller shorter line can increase the area. 
+# Repeat until the pointers meet. Time complexity is O(n) and space is O(1).”
