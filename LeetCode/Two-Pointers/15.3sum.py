@@ -50,3 +50,9 @@ class Solution:
   
   # T: O(n^2)
   # S: O(n)
+#   This is the classic 3Sum solution using sorting and the two-pointer technique.
+# We first sort the array, then fix one element and use two pointers to find the other two numbers.
+# To avoid duplicates, we skip repeated values for both the fixed element and the two pointers.
+
+# Time complexity: O(n²)
+# Space complexity: O(1), ignoring the output list.
