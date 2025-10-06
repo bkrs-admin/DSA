@@ -7,25 +7,23 @@ from collections import deque
 #         self.right = right
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        # edge case handling
-        if not p and not q:
-            return True
-        queue = deque([(p, q)]) # queue it's first root val
+        if not q and not p: return True
 
-        while queue: # iterate through while node exists in queue
-            p_node, q_node = queue.popleft() # pop each node to compare
+        q = deque([(p, q)])
 
-            if not p_node and not q_node: # if both node is missing, continue
+        while q: 
+            p_node, q_node = q.popleft()
+
+            if not p_node and not q_node:
                 continue
+            
+            if not p_node or not q_node or p_node.val != q_node.val:
+                return False
+            
+            q.append((p_node.left, q_node.left))
+            q.append((p_node.right, q_node.right))
 
-            if not p_node or not q_node or p_node.val != q_node.val : # if each node value not equal or one of node is missing
-                return False # return False
-
-            # append each node's left and right node to queue
-            queue.append((p_node.left, q_node.left))
-            queue.append((p_node.right, q_node.right))
-        
-        return True # return True if passed all
+        return True
 
 # T: O(n)
-# S: O(w), worst case O(n)
+# S: O(w) worst case O(n)
