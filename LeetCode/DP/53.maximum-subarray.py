@@ -18,3 +18,9 @@ class Solution:
     
 # T: O(n)
 # S: O(1)
+
+
+# “We track the current subarray sum with curr_sum.
+# If curr_sum becomes negative, it cannot contribute to a larger sum in the future, so we reset it to zero.
+# max_sum keeps the largest sum found so far.
+# This approach is O(n) time and O(1) space.”
