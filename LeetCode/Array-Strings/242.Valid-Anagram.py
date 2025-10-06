@@ -44,3 +44,5 @@ print(a)
 # 1. Counter & Hashmap- T: O(N), S: O(k), k= length of word <- The best solution, simple and clean
 # 2. Sort and compare - T: O(N log N), S: O(N), 
     # if input contains unicode, it could return false due to different unicodes from characters, cases, and etc
+
+"I count character frequencies for both strings using hash maps. This gives O(n + m) time and space. Using sorting instead would be O(n log n + m log m) time but still O(n + m) space."

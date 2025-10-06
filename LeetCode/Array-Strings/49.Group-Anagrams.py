@@ -39,3 +39,14 @@ class Solution:
 
         # same method, return list type of d_dict values
         return list(d_dict.values())
+    
+# T: O(n * k log k)
+# O (n)
+"Here I sort each string to create a key for the hashmap. "
+"Sorting each string takes O(k log k), so the total time complexity is O(n * k log k). "
+"Space is O(n) for the hashmap."
+
+# T: O(n * k)
+# O(n)
+"Here I use a fixed-size array to count character frequencies, which is converted to a tuple as the key. "
+"This avoids sorting, giving O(n * k) time complexity and O(n) space."
