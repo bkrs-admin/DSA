@@ -26,3 +26,10 @@ class Solution:
             right *= nums[i]
 
         return res
+    
+#T: O(n)
+#S: O(n)
+"I build the result array in two passes. "
+"First, I accumulate the product of elements to the left of each index. "
+"Then I multiply by the product of elements to the right of each index in a second pass. "
+"This avoids using division and runs in O(n) time with O(n) space."
