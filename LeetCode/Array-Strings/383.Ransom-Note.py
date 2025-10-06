@@ -1,20 +1,28 @@
-def canConstruct(ransomNote, magazine):
-    h_map = {}
+from collections import Counter
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        # ransom_count = Counter(ransomNote)
+        # magazine_count = Counter(magazine)
 
-    for char in magazine:
-        h_map[char] = h_map.get(char, 0) + 1
-    
-    for char in ransomNote:
-        if char in h_map and h_map[char] > 0 :
-            h_map[char] -= 1
-        else:
-            return False
+        # # for char, cnt in ransom_count.items():
+        # #     if magazine_count[char] < cnt:
+        # #         return False
+        
+        # # return True
 
-    return True
+        # return not(ransom_count - magazine_count)
 
-r = "aa" 
-m = "aab"
-a = canConstruct(r, m)
+        h_map = {}
 
-print(a) # expected true
+        for c in magazine:
+            h_map[c] = h_map.get(c, 0) + 1
 
+        for c in ransomNote:
+            if c not in h_map or h_map[c] == 0:
+                return False
+            h_map[c] -= 1
+        
+        return True
+
+# T: O(m + n)
+# T: O(n)
