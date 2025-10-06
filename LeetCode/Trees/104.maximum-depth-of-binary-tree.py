@@ -19,3 +19,9 @@ class Solution:
     
 # T: O(n)
 # S: O(h), worst case O(n)
+
+# This solution uses DFS recursion to compute the maximum depth of a binary tree.
+# For each node, we return 1 plus the maximum of the depths of its left and right subtrees.
+
+# Time complexity: O(n), since every node is visited once.
+# Space complexity: O(h), where h is the height of the tree (O(log n) for balanced, O(n) for skewed).
