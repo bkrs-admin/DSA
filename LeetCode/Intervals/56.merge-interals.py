@@ -13,6 +13,7 @@ class Solution:
         
         return merged 
     
-    # “We first sort the intervals by their start time (O(n log n))
-    #  and then merge them in a single linear scan (O(n)). 
-    # So overall, it’s O(n log n) time and O(n) space.”
+# “First, we sort the intervals by start time, which costs O(n log n).
+# Then we iterate through the intervals once to merge overlapping intervals, which is O(n).
+# Therefore, total time complexity is O(n log n).
+# Space complexity is O(n) because we store the merged intervals and sorted() creates a new list.”

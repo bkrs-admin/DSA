@@ -25,4 +25,5 @@ class Solution:
         #if loop is over then no duplicate found, return False
         return False
 
-"I convert the list to a set to remove duplicates and compare lengths. This is O(n) time and O(n) space, and it's a very concise way to check for duplicates."
+"I convert the list to a set to remove duplicates and compare lengths. "
+"This is O(n) time and O(n) space, and it's a very concise way to check for duplicates."
