@@ -35,4 +35,7 @@ class Solution:
   # T: O(n)
   # S: O(n) 
 
-#   "I use a sliding window with two pointers and a hash set to track unique characters. If a duplicate is found, I move the left pointer until the window is unique. We update the max length at each step. Time complexity is O(n) and space is O(min(n, character set))."
+#   "I use a sliding window with two pointers and a hash set to track unique characters. 
+# If a duplicate is found, I move the left pointer until the window is unique. 
+# We update the max length at each step. 
+# Time complexity is O(n) and space is O(min(n, character set))."

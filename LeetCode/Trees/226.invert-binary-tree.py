@@ -25,7 +25,7 @@ class Solution:
 # T: O(n)
 # S: O(h), worst case O(n), best case O(log n)
 
-# his solution uses DFS recursion to invert the binary tree.
+# this solution uses DFS recursion to invert the binary tree.
 # For each node, we simply swap its left and right children, and recursively call the function on both subtrees.
 
 # Time complexity: O(n), since we visit every node once.

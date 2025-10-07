@@ -33,3 +33,8 @@ class Solution:
     
   # T: O(n)
   # S: O(n)
+
+"I first put all numbers into a hash set for O(1) lookups. "
+"Then, for each number, I only start counting a sequence if the previous number doesn't exist in the set. "
+"This way, I traverse each consecutive sequence once. "
+"The time complexity is O(n) and space complexity is O(n)."

@@ -28,10 +28,10 @@ class Solution:
 # If at any point the current index exceeds this farthest value, we cannot proceed, so we return False.”
 
 # Front to back
-# “We iterate from the start, tracking the farthest index reachable.
-# If at any point the current index exceeds farthest, the last index is unreachable.
-# Otherwise, we update farthest with the maximum of itself and i + nums[i].
-# Finally, if farthest reaches or passes the last index, the last index is reachable.
+# “We iterate from the start, tracking the target index reachable.
+# If at any point the current index exceeds target, the last index is unreachable.
+# Otherwise, we update target with the maximum of itself and i + nums[i].
+# Finally, if target reaches or passes the last index, the last index is reachable.
 # Time complexity is O(n) and space complexity is O(1).”
 
 # back to front

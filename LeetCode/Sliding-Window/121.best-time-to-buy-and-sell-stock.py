@@ -31,6 +31,7 @@ class Solution:
 
 # T: O(n)
 # S: O(1)
+
 "I iterate through the prices while keeping track of the minimum price seen so far. "
 "For each price, I calculate the potential profit and update the maximum profit. "
 "This gives O(n) time and O(1) space."
