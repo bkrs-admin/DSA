@@ -50,3 +50,17 @@ class Solution:
         # return result
 # T: O(n log k) or O(n) with bucket sort
 # S: O(n)
+
+# Interview Explanation (15–25 sec)
+
+# I first use a Counter to count each number’s frequency in O(n) time.
+# Then I convert it into a list of (num, freq) pairs and sort them by frequency in descending order.
+# Finally, I take the first k numbers from the sorted list.
+
+# This approach is simple and clear, running in O(n log n) time and O(n) space.
+
+# ⚡ Alternative Note (if interviewer asks optimization)
+
+# For better performance, we could use a bucket sort or a heap,
+# both reducing the time complexity to O(n).
+# But this sorting version is perfectly fine for clarity and small input sizes.

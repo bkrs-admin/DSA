@@ -47,3 +47,20 @@ class Solution:
         
 #         # 좌우 서브트리 재귀 확인
 #         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+
+
+# DFS
+# The goal is to check if two binary trees are structurally identical and have the same node values.
+
+# I use a simple DFS recursion that compares nodes pair by pair.
+# If both nodes are None, they’re identical. If one is None or their values differ, return False.
+# Otherwise, I recursively check the left and right subtrees.
+
+# This runs in O(n) time since we visit each node once, and O(h) space due to the recursion stack.
+
+# BFS
+# You can also implement this iteratively using two queues — one for each tree.
+# At each step, pop from both, compare values, and push their left/right children in sync.
+# If any mismatch occurs (structure or value), return False.
+
+# That BFS approach is logically equivalent, still O(n) time and O(n) space (queue).

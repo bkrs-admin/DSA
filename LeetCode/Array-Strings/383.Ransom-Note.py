@@ -26,3 +26,36 @@ class Solution:
 
 # T: O(m + n)
 # T: O(n)
+
+# ✅ Approach 1 — Using Counter Subtraction
+# 💬 Interview Explanation
+
+# I use two Counters to store character frequencies for both strings.
+# Then I subtract them — if the result is empty, it means the magazine has enough characters for the ransom note.
+
+# This is clean and Pythonic, running in O(n + m) time and O(1) space since there are only 26 lowercase letters.
+
+# ⏱ Time: O(n + m)
+# 💾 Space: O(1) (bounded by alphabet size)
+
+# ✅ Approach 2 — Manual Frequency Comparison
+# 💬 Interview Explanation
+
+# I count the frequency of each character in both strings using Counter.
+# Then I check whether every character in the ransom note appears at least as many times in the magazine.
+
+# This is intuitive and efficient — O(n + m) time and constant space.
+
+# ⏱ Time: O(n + m)
+# 💾 Space: O(1)
+
+# ✅ Approach 3 — Greedy Character Reduction
+# 💬 Interview Explanation
+
+# I build a frequency map for the magazine, then iterate through each character in the ransom note.
+# For every match, I decrement the count — if any character runs out, I return False early.
+
+# This is slightly more manual but very clear, still O(n + m) time and O(1) space.
+
+# ⏱ Time: O(n + m)
+# 💾 Space: O(1)
