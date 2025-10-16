@@ -49,9 +49,10 @@ class Solution:
 #         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
 
-# DFS
+
 # The goal is to check if two binary trees are structurally identical and have the same node values.
 
+# DFS
 # I use a simple DFS recursion that compares nodes pair by pair.
 # If both nodes are None, they’re identical. If one is None or their values differ, return False.
 # Otherwise, I recursively check the left and right subtrees.

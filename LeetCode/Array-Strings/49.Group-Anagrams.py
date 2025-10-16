@@ -48,5 +48,6 @@ class Solution:
 
 # T: O(n * k)
 # O(n)
-"Here I use a fixed-size array to count character frequencies, which is converted to a tuple as the key. "
+"Here I use a fixed-size array to count character frequencies, "
+"which is converted to a tuple as the key. "
 "This avoids sorting, giving O(n * k) time complexity and O(n) space."
