@@ -14,3 +14,6 @@ class Solution:
                 right = mid - 1
         
         return min_value
+    
+#T: O(log n)
+#S: O(1)
