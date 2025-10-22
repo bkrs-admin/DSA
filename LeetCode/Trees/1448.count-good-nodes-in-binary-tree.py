@@ -6,34 +6,18 @@
 #         self.right = right
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
+        def dfs(root, max_so_far):
+            if not root: return 0
 
-        # get a variable to store return value, make sure allocate it
-        counter = [0]
+            good = 1 if root.val >= max_so_far else 0
+            max_so_far = max(max_so_far, root.val)
 
-        # need helper function taking node and max_val for dfs
-        def dfs(node, max_val):
-            # edge case, if not node, then stop
-            if not node:
-                return
+            left = dfs(root.left, max_so_far)
+            right = dfs(root.right, max_so_far)
 
-            # if node.val is greater or equal to max_val, then counter + 1
-            if node.val >= max_val:
-                counter[0] += 1
-
-            # create new max val from current node val and max val
-            new_max_val = max(node.val, max_val)
-
-            # if node has left and right then dfs with new max val
-            if node.left:
-                dfs(node.left, new_max_val)
-            if node.right:
-                dfs(node.right, new_max_val)
-        
-        # call dfs function with root and root.val which is always good node
-        dfs(root, root.val)
-        
-        # return exact counter value
-        return counter[0]
+            return good + left + right
+            
+        return dfs(root, root.val)
     
 # T: O(n)
-# S: O(h) worst case O(n)
+# S: O(h)
