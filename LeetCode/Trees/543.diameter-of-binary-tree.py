@@ -6,23 +6,21 @@
 #         self.right = right
 class Solution:
     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        # set non local variable for res value
-        res = [0]
+        largest_diameter = [0]
 
-        def dfs(root): # helper function for dfs 
-            # edge case, if not root, then return 0
-            if not root:
-                return 0
-            
-            # get l and r height
-            l_height = dfs(root.left)
-            r_height = dfs(root.right)
+        def dfsR(root):
+            if not root: return 0
 
-            # update res with diameter
-            res[0] = max(res[0], l_height + r_height)
+            left = dfsR(root.left)
+            right = dfsR(root.right)
+            diameter = left + right
+            largest_diameter[0] = max(largest_diameter[0], diameter)
 
-            return 1 + max(l_height, r_height) # return current subtree's height
-        
-        dfs(root) # call dfs at root
+            return 1 + max(left, right)
 
-        return res[0] # return res which updated diameter
+        dfsR(root)
+
+        return largest_diameter[0]
+    
+# T: O(n)
+# S: O(h)
