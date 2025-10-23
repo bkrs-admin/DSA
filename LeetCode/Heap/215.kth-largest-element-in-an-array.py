@@ -15,5 +15,5 @@ class Solution:
 
         return -max_heap[0] # return the 0 index which our kth largest element with non negetive value
 
-# T: O(k)
-# S: O(1)
+# T: O(n log n)
+# S: O(n)
